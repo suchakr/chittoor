@@ -3,9 +3,9 @@ layout: page
 title: कथावल्लरी
 permalink: /kathavallari/
 ---
-[Download Pustakam](/assets/chittoor-2-अभिज्ञ/kathavallari/1343663-KathAvallaribook.pdf)
+[Download Pustakam](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/1343663-KathAvallaribook.pdf)
 
-![004](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/004.jpg)
+![004](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/004.jpg)
 
 ---
 
@@ -35,80 +35,80 @@ permalink: /kathavallari/
 
 ---
 
-![006](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/006.jpg)
+![006](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/006.jpg)
 
 ---
 
-![007](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/007.jpg)
+![007](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/007.jpg)
 
 ---
 
-![008](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/008.jpg)
+![008](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/008.jpg)
 
 ---
 
-![009](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/009.jpg)
+![009](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/009.jpg)
 
 ---
 
-![010](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/010.jpg)
+![010](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/010.jpg)
 
 ---
 
-![011](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/011.jpg)
+![011](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/011.jpg)
 
 ---
 
-![012](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/012.jpg)
+![012](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/012.jpg)
 
 ---
 
-![013](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/013.jpg)
+![013](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/013.jpg)
 
 ---
 
-![014](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/014.jpg)
+![014](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/014.jpg)
 
 ---
 
-![015](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/015.jpg)
+![015](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/015.jpg)
 
 ---
 
-![016](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/016.jpg)
+![016](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/016.jpg)
 
 ---
 
-![017](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/017.jpg)
+![017](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/017.jpg)
 
 ---
 
-![018](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/018.jpg)
+![018](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/018.jpg)
 
 ---
 
-![019](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/019.jpg)
+![019](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/019.jpg)
 
 ---
 
-![020](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/020.jpg)
+![020](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/020.jpg)
 
 ---
 
-![021](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/021.jpg)
+![021](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/021.jpg)
 
 ---
 
-![022](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/022.jpg)
+![022](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/022.jpg)
 
 ---
 
-![023](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/023.jpg)
+![023](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/023.jpg)
 
 ---
 
-![024](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/024.jpg)
+![024](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/024.jpg)
 
 ---
 
-<!-- ![025](/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/025.jpg) -->
+<!-- ![025](/chittoor/assets/chittoor-2-अभिज्ञ/kathavallari/ocr/jpg/025.jpg) -->
