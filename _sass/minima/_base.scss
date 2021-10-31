@@ -260,6 +260,20 @@ table {
   margin-bottom: 0.5em;
 }
 
+#single-sloka-table audio {
+  width :60px; 
+}
+#single-sloka-table td {
+  text-align: center;
+}
+
+.memorized-sloka {
+  background-color: rgb(235, 157, 238);
+  font-weight: normal;
+  // font-size: 1.2em;
+  // margin-bottom: 0.5em;
+}
+
 code { 
   color:rgb(206, 36, 36)
 }

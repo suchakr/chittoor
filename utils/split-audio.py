@@ -35,9 +35,11 @@ import glob
 # suppress warnings
 import warnings
 import time
+import random
 warnings.filterwarnings('ignore')
 t0 = time.time()
-fn = glob.glob("../assets/*2*/rag*/*10.wav")[0]
+fns = glob.glob("../assets/*2*/rag*/*wav")
+fn = fns[random.randint(0, len(fns)-1)]
 print(fn)
 x, sr = librosa.load(fn)
 print(f"Time to load {time.time() - t0}, {sr=}  {x.shape=}")
@@ -140,3 +142,84 @@ pd.Series(fft.imag).plot(ax=axs[4])
 
 
 # %%
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import auc
+np.random.seed(0)
+
+# Sine sample with a frequency of 5hz and add some noise
+sr = 32  # sampling rate
+y = np.linspace(0, 5 * 2*np.pi, sr)
+y = np.tile(np.sin(y), 5)
+y += np.random.normal(0, 1, y.shape)
+ttt = np.arange(len(y)) / float(sr)
+
+# Generate frquency spectrum
+spectrum, freqs, _ = plt.magnitude_spectrum(y, sr)
+
+# Calculate percentage for a frequency range 
+lower_frq, upper_frq = 4, 6
+ind_band = np.where((freqs > lower_frq) & (freqs < upper_frq))
+plt.fill_between(freqs[ind_band], spectrum[ind_band], color='red', alpha=0.6)
+frq_band_perc = auc(freqs[ind_band], spectrum[ind_band]) / auc(freqs, spectrum)
+print('{:.1%}'.format(frq_band_perc))
+# 19.8%
+
+# %%
+x, sr = librosa.load(fn)
+spectrum, freqs, _ = plt.magnitude_spectrum(x, sr)
+
+#%%
+
+# Calculate percentage for a frequency range 
+lower_frq, upper_frq = 4, 6
+ind_band = np.where((freqs > lower_frq) & (freqs < upper_frq))
+plt.fill_between(freqs[ind_band], spectrum[ind_band], color='red', alpha=0.6)
+frq_band_perc = auc(freqs[ind_band], spectrum[ind_band]) / auc(freqs, spectrum)
+print('{:.1%}'.format(frq_band_perc))
+# %%
+
+
+# Import the AudioSegment class for processing audio and the 
+# split_on_silence function for separating out silent chunks.
+from pydub import AudioSegment
+from pydub.silence import split_on_silence
+
+#%%
+
+# Define a function to normalize a chunk to a target amplitude.
+def match_target_amplitude(aChunk, target_dBFS):
+    ''' Normalize given audio chunk '''
+    change_in_dBFS = target_dBFS - aChunk.dBFS
+    return aChunk.apply_gain(change_in_dBFS)
+
+# Load your audio.
+song = AudioSegment.from_mp3(fn)
+
+#%%
+
+# Split track where the silence is 2 seconds or more and get chunks using 
+# the imported function.
+chunks = split_on_silence (
+    # Use the loaded audio.
+    song, 
+    # Specify that a silent chunk must be at least 2 seconds or 2000 ms long.
+    min_silence_len = 2000,
+    # Consider a chunk silent if it's quieter than -16 dBFS.
+    # (You may want to adjust this parameter.)
+    silence_thresh = -16
+)
+
+#%%
+
+# Process each chunk with your parameters
+for i, chunk in enumerate(chunks):
+    # Create a silence chunk that's 0.5 seconds (or 500 ms) long for padding.
+    silence_chunk = AudioSegment.silent(duration=500)
+
+    # Add the padding chunk to beginning and end of the entire chunk.
+    audio_chunk = silence_chunk + chunk + silence_chunk
+
+    # Normalize the entire chunk.
+    normalized_chunk = match_target_amplitude(audio_chunk, -20.0)

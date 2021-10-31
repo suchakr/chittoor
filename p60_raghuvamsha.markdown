@@ -11,13 +11,15 @@ rvs:
  - 71-90
  - 91-104
 
+memorize: [2, 5, 7, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 58, 59, 60, 61, 63, 64, 65, 68, 69, 70, 75, 77, 79, 80, 84, 89, 90, 92, 104]
+
 ---
 
 [Download Pustakam](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
 
 ### Audio
 
-<table>
+<!-- <table>
 {% for rv in page.rvs %}
 	<tr><td>
 	<span href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </span>
@@ -27,9 +29,27 @@ rvs:
 	</audio>
 	</td></tr>
 {% endfor %}
+</table> -->
+
+<table id="single-sloka-table">
+{% assign run_cntr = 0 %}
+{% assign cntr = 0 %}
+{% for sloka in site.static_files %}
+	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv" %}
+	{% if cntr == 0 %} <tr> {% endif %}
+	{% assign run_cntr = run_cntr | plus:1 %} 
+	{% assign cntr = run_cntr | modulo:5 %} 
+	{% if page.memorize contains run_cntr %} <td class="memorized-sloka"> {% else %} <td> {% endif %}
+	{% if page.memorize contains run_cntr %} {% assign looper="loop" %} {% else %} {%assign looper=""%} {% endif %}
+	<a href="{{ sloka.path | relative_url }}"> {{ sloka.name | replace : ".mp3" , "" | replace : "rv" , "" }}</a>
+		<audio controls {{ looper }} src="{{ sloka.path | relative_url | url_decode }}"> Your browser does not support the <code>audio</code> element.  
+		<a href="{{ sloka.path | relative_url | url_decode }}"> {{ sloka.name | url_decode }} </a>
+		</audio>
+	</td>
+	{% if cntr == 0 %} </tr> {% endif %}
+	{% endif %}
+{% endfor %}
 </table>
-
-
 
 <!-- [1-10](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-1-10.mp3) |
 [11-20](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-11-20.mp3) |
