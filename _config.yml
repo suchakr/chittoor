@@ -29,7 +29,7 @@ github_username:  suchakr
 
 # Build settings
 # theme: jekyll-theme-minimal
-theme: minima:
+theme: minima
 plugins:
   - jekyll-feed
 
