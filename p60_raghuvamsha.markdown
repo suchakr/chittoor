@@ -11,25 +11,25 @@ rvs:
  - 71-90
  - 91-104
 
-memorize: [2, 5, 7, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 58, 59, 60, 61, 63, 64, 65, 68, 69, 70, 75, 77, 79, 80, 84, 89, 90, 92, 104]
+memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 58, 59, 60, 61, 63, 64, 65, 68, 69, 70, 75, 77, 79, 80, 84, 89, 90, 92, 104]
 
 ---
 
 [Download Pustakam](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
 
-### Audio
+### Audio -  Memorize the pinks
 
-<!-- <table>
-{% for rv in page.rvs %}
-	<tr><td>
-	<span href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </span>
-	</td><td>
-	<audio controls src="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> Your browser does not support the <code>audio</code> element.  
-	<a href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </a>
-	</audio>
-	</td></tr>
-{% endfor %}
-</table> -->
+<script> 
+function toggleMemorize() { 
+	// document.getElementById("toggleMemorize").classList.toggle("hidden");
+	document.getElementById("toggleMemorize").onclick = function() {
+		Array.from(document.querySelectorAll('.no-memorize')).forEach ( x => { x.hidden = !x.hidden })
+	}
+}
+setTimeout( toggleMemorize, 1000);
+</script>
+<button id="toggleMemorize">Only/Also Pinks</button>
+
 
 <table id="single-sloka-table">
 {% assign run_cntr = 0 %}
@@ -38,8 +38,8 @@ memorize: [2, 5, 7, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 5
 	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv" %}
 	{% if cntr == 0 %} <tr> {% endif %}
 	{% assign run_cntr = run_cntr | plus:1 %} 
-	{% assign cntr = run_cntr | modulo:5 %} 
-	{% if page.memorize contains run_cntr %} <td class="memorized-sloka"> {% else %} <td> {% endif %}
+	{% assign cntr = run_cntr | modulo:3 %} 
+	{% if page.memorize contains run_cntr %} <td class="memorized-sloka"> {% else %} <td class="no-memorize"> {% endif %}
 	{% if page.memorize contains run_cntr %} {% assign looper="loop" %} {% else %} {%assign looper=""%} {% endif %}
 	<a href="{{ sloka.path | relative_url }}"> {{ sloka.name | replace : ".mp3" , "" | replace : "rv" , "" }}</a>
 		<audio controls {{ looper }} src="{{ sloka.path | relative_url | url_decode }}"> Your browser does not support the <code>audio</code> element.  
@@ -77,7 +77,7 @@ memorize: [2, 5, 7, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 5
  तयोश्चतुर्दशैकेन रामम् प्राव्राजयत्समाः।
  द्वितीयेन सुतस्यैच्छद्वैधव्यैकफलाम् श्रियम्॥ १२-६
 
- पित्रा दत्तम् रुदन्रामः प्राङ्महीम् प्रत्यपद्यत।
+ पित्रा दत्तां रुदन्रामः प्राङ्महीम् प्रत्यपद्यत।
  पश्चाद्वनाय गच्छेति तदाज्ञाम् मुदितोऽग्रहीत्॥ १२-७ ***
 
  दधतो मङ्गलक्षौमे वसानस्य च वल्कले।
@@ -389,7 +389,7 @@ memorize: [2, 5, 7, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 5
  सा किलाश्वासिता चण्डी भर्त्रा तत् संश्रुतौ वरौ।
  उद्ववामेन्द्रसिक्ता भूर्बिलमग्नाविवोरगौ॥ १२-५ ***
 --
- पित्रा दत्तम् रुदन्रामः प्राङ्महीम् प्रत्यपद्यत।
+ पित्रा दत्तां रुदन्रामः प्राङ्महीम् प्रत्यपद्यत।
  पश्चाद्वनाय गच्छेति तदाज्ञाम् मुदितोऽग्रहीत्॥ १२-७ ***
 --
  स सीतालक्ष्मणसखः सत्याद्गुरुमलोपयन्।
@@ -495,3 +495,15 @@ memorize: [2, 5, 7, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 5
  भुजविजितविमानरत्नाधिरूढः प्रतस्थे पुरीम्॥ १२-१०४ ***
 --
  </pre>
+
+### With Commentary
+
+{% for rv in page.rvs %}
+	<tr><td>
+	<span href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </span>
+	</td><td>
+	<audio controls src="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> Your browser does not support the <code>audio</code> element.  
+	<a href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </a>
+	</audio>
+	</td></tr>
+{% endfor %}
