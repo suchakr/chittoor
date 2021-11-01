@@ -20,7 +20,7 @@ memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55
 ### Audio - Memorize the pinks
 <button id="toggleMemorize">Only/Also Pinks</button>
 
-<script src="{% link assets/js/rv.js%}"> </script>
+<script src="{% link chittoor/assets/js/rv.js%}"> </script>
 <div id="#js-slokas"> </div>
 
 ### Audio - With Commentary
