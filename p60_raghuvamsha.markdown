@@ -36,12 +36,15 @@ setTimeout( setupSlokas, 300)
 <div id="#js-slokas"> </div> -->
 {% endcomment %}
 
+<script src="/chittoor/assets/js/rv.js"> </script>
+<div id="#js-slokas"> </div>
+
 
 <table id="single-sloka-table">
 {% assign run_cntr = 0 %}
 {% assign cntr = 0 %}
 {% for sloka in site.static_files %}
-	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv" %}
+	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv12.all" %}
 	{% if cntr == 0 %} <tr> {% endif %}
 	{% assign run_cntr = run_cntr | plus:1 %} 
 	{% assign cntr = run_cntr | modulo:1 %} 
@@ -70,6 +73,7 @@ setTimeout( setupSlokas, 300)
 {% endfor %}
 </table>
 
+{% comment %}
 <!-- [1-10](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-1-10.mp3) |
 [11-20](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-11-20.mp3) |
 [31-50](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-31-50.mp3) |
@@ -514,3 +518,5 @@ setTimeout( setupSlokas, 300)
  भुजविजितविमानरत्नाधिरूढः प्रतस्थे पुरीम्॥ १२-१०४ ***
 --
  </pre>
+
+{% endcomment %}
