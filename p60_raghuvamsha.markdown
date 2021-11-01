@@ -14,14 +14,48 @@ rvs:
 memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55, 58, 59, 60, 61, 63, 64, 65, 68, 69, 70, 75, 77, 79, 80, 84, 89, 90, 92, 104]
 
 ---
+<script>
+function setupSlokas() { 
+	// document.getElementById("toggleMemorize").classList.toggle("hidden");
+	document.getElementById("toggleMemorize").onclick = function() {
+		Array.from(document.querySelectorAll('.no-memorize')).forEach ( x => { x.hidden = !x.hidden })
+	}
+	// renderSlokas(slokas)
+}
+setTimeout( setupSlokas, 300)
+</script>
 
 [Download Pustakam!](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
 
 ### Audio - Memorize the pinks
+
 <button id="toggleMemorize">Only/Also Pinks</button>
 
-<script src="{% link chittoor/assets/js/rv.js%}"> </script>
-<div id="#js-slokas"> </div>
+{% comment %}
+<!-- <script src="{% link chittoor/assets/js/rv.js%}"> </script>
+<div id="#js-slokas"> </div> -->
+{% endcomment %}
+
+
+<table id="single-sloka-table">
+{% assign run_cntr = 0 %}
+{% assign cntr = 0 %}
+{% for sloka in site.static_files %}
+	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv" %}
+	{% if cntr == 0 %} <tr> {% endif %}
+	{% assign run_cntr = run_cntr | plus:1 %} 
+	{% assign cntr = run_cntr | modulo:1 %} 
+	{% if page.memorize contains run_cntr %} <td class="memorized-sloka"> {% else %} <td class="no-memorize"> {% endif %}
+	{% if page.memorize contains run_cntr %} {% assign looper="loop" %} {% else %} {%assign looper=""%} {% endif %}
+	<a href="{{ sloka.path | relative_url }}"> {{ sloka.name | replace : ".mp3" , "" | replace : "rv" , "" }}</a>
+	<audio controls {{ looper }} src="{{ sloka.path | relative_url | url_decode }}"> Your browser does not support the <code>audio</code> element.  
+		<a href="{{ sloka.path | relative_url | url_decode }}"> {{ sloka.name | url_decode }} </a>
+	</audio>
+	</td>
+	{% if cntr == 0 %} </tr> {% endif %}
+	{% endif %}
+{% endfor %}
+</table>
 
 ### Audio - With Commentary
 <table>
@@ -35,28 +69,6 @@ memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55
 	</td></tr>
 {% endfor %}
 </table>
-
-{% comment %}
-<table id="single-sloka-table">
-{% assign run_cntr = 0 %}
-{% assign cntr = 0 %}
-{% for sloka in site.static_files %}
-	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv." %}
-	{% if cntr == 0 %} <tr> {% endif %}
-	{% assign run_cntr = run_cntr | plus:1 %} 
-	{% assign cntr = run_cntr | modulo:3 %} 
-	{% if page.memorize contains run_cntr %} <td class="memorized-sloka"> {% else %} <td class="no-memorize"> {% endif %}
-	{% if page.memorize contains run_cntr %} {% assign looper="loop" %} {% else %} {%assign looper=""%} {% endif %}
-	<a href="{{ sloka.path | relative_url }}"> {{ sloka.name | replace : ".mp3" , "" | replace : "rv" , "" }}</a>
-		<audio controls {{ looper }} src="{{ sloka.path | relative_url | url_decode }}"> Your browser does not support the <code>audio</code> element.  
-		<a href="{{ sloka.path | relative_url | url_decode }}"> {{ sloka.name | url_decode }} </a>
-		</audio>
-	</td>
-	{% if cntr == 0 %} </tr> {% endif %}
-	{% endif %}
-{% endfor %}
-</table>
-
 
 <!-- [1-10](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-1-10.mp3) |
 [11-20](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-11-20.mp3) |
@@ -502,4 +514,3 @@ memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55
  भुजविजितविमानरत्नाधिरूढः प्रतस्थे पुरीम्॥ १२-१०४ ***
 --
  </pre>
-{% endcomment %}
