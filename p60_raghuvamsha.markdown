@@ -15,7 +15,7 @@ memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55
 
 ---
 
-[Download Pustakam](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
+[Download Pustakam!](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
 
 ### Audio - Memorize the pinks
 <button id="toggleMemorize">Only/Also Pinks</button>
