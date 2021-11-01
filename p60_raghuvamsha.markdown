@@ -17,25 +17,31 @@ memorize: [2, 5, 7, 8, 9, 13, 16, 17, 18, 19, 20, 29, 31, 32, 33, 34, 36, 44, 55
 
 [Download Pustakam](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
 
-### Audio -  Memorize the pinks
-
-<script> 
-function toggleMemorize() { 
-	// document.getElementById("toggleMemorize").classList.toggle("hidden");
-	document.getElementById("toggleMemorize").onclick = function() {
-		Array.from(document.querySelectorAll('.no-memorize')).forEach ( x => { x.hidden = !x.hidden })
-	}
-}
-setTimeout( toggleMemorize, 1000);
-</script>
+### Audio - Memorize the pinks
 <button id="toggleMemorize">Only/Also Pinks</button>
 
+<script src="{% link assets/js/rv.js%}"> </script>
+<div id="#js-slokas"> </div>
 
+### Audio - With Commentary
+<table>
+{% for rv in page.rvs %}
+	<tr><td>
+	<span href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </span>
+	</td><td>
+	<audio controls src="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> Your browser does not support the <code>audio</code> element.  
+	<a href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </a>
+	</audio>
+	</td></tr>
+{% endfor %}
+</table>
+
+{% comment %}
 <table id="single-sloka-table">
 {% assign run_cntr = 0 %}
 {% assign cntr = 0 %}
 {% for sloka in site.static_files %}
-	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv" %}
+	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv." %}
 	{% if cntr == 0 %} <tr> {% endif %}
 	{% assign run_cntr = run_cntr | plus:1 %} 
 	{% assign cntr = run_cntr | modulo:3 %} 
@@ -50,6 +56,7 @@ setTimeout( toggleMemorize, 1000);
 	{% endif %}
 {% endfor %}
 </table>
+
 
 <!-- [1-10](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-1-10.mp3) |
 [11-20](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-11-20.mp3) |
@@ -495,15 +502,4 @@ setTimeout( toggleMemorize, 1000);
  भुजविजितविमानरत्नाधिरूढः प्रतस्थे पुरीम्॥ १२-१०४ ***
 --
  </pre>
-
-### With Commentary
-
-{% for rv in page.rvs %}
-	<tr><td>
-	<span href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </span>
-	</td><td>
-	<audio controls src="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> Your browser does not support the <code>audio</code> element.  
-	<a href="/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/RaghuVamsha-Sarga12-{{ rv }}.mp3"> {{ rv }} </a>
-	</audio>
-	</td></tr>
-{% endfor %}
+{% endcomment %}
