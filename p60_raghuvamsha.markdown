@@ -40,11 +40,12 @@ setTimeout( setupSlokas, 300)
 <div id="#js-slokas"> </div>
 
 
+{% comment %}
 <table id="single-sloka-table">
 {% assign run_cntr = 0 %}
 {% assign cntr = 0 %}
 {% for sloka in site.static_files %}
-	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv12.all" %}
+	{% if sloka.path contains "/assets/chittoor-2-अभिज्ञ/raghuvamsha/slokas_mp3/rv12_" %}
 	{% if cntr == 0 %} <tr> {% endif %}
 	{% assign run_cntr = run_cntr | plus:1 %} 
 	{% assign cntr = run_cntr | modulo:1 %} 
@@ -59,6 +60,7 @@ setTimeout( setupSlokas, 300)
 	{% endif %}
 {% endfor %}
 </table>
+{% endcomment %}
 
 ### Audio - With Commentary
 <table>

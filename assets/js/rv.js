@@ -323,28 +323,56 @@ slokas =
 memorize_slokas = memorize.map(s => slokas[s-1].replace(/\*+/g, ' '));
 
 function renderSlokas (slokas) {
-	var html = slokas.map((s,i) => { 
-	var num = String(i+1).padStart(3, '0');
-	var verse = `${num}`;
-	var mp3 =  `/chittoor/assets/chittoor-2-%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E/raghuvamsha/slokas_mp3/rv12.${num}.mp3`;
-	var mem = memorize.includes(i+1) 
-	var cls = mem ? 'memorized-sloka' : 'no-memorize';
-	var sloka = slokas[i].replace(/[\r\n]/, '<br>');
-	return `
+	var sloka_html = slokas.map((s,i) => { 
+		var num = String(i+1).padStart(3, '0');
+		var verse = `${num}`;
+		var mp3 =  `/chittoor/assets/chittoor-2-%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E/raghuvamsha/slokas_mp3/rv12.${num}.mp3`;
+		var mem = memorize.includes(i+1) 
+		var cls = mem ? 'memorized-sloka' : 'no-memorize';
+		var sloka = slokas[i].replace(/[\r\n]/, '<br>');
+		return `
+			<tr class="t${cls}"> 
+			<td> 
+				<span><a href="${mp3}"> ${verse}</a></span>
+				<span><audio controls="" ${mem?"loop":""} src=${mp3}> Your browser does not support the <code>audio</code> element. <a href=${mp3}> ${verse} </a> </audio></span>
+				<span><pre class="${cls}">${sloka}</pre></span>
+			</td>
+			</tr>
+
+		`
+		// return `<pre class="${cls}">${s.replace(/^\s+/,"")}</pre><hr>` 
+		}).join('');
+
+	var cls = 'memorized-sloka' 
+	var verse = `${memorize.length} verses to be memorized <br>- each repeats 4 times`;
+	var mp3 = `/chittoor/assets/chittoor-2-%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E/raghuvamsha/slokas_mp3/rv12_mem.mp3`;
+	var mem_html= `
 		<tr class="t${cls}"> 
 		<td> 
-			<span><a href=${mp3}"> ${verse}</a></span>
-			<span><audio controls="" ${mem?"loop":""} src=${mp3}> Your browser does not support the <code>audio</code> element. <a href=${mp3}> ${verse} </a> </audio></span>
-			<span><pre class="${cls}">${sloka}</pre></span>
+			<span><a href="${mp3}"> <span><pre class="${cls}">${verse}</pre></span> </a></span>
+			<span><audio controls="" ${false?"loop":""} src=${mp3}> Your browser does not support the <code>audio</code> element. <a href=${mp3}> ${verse} </a> </audio></span>
+
 		</td>
 		</tr>
-
 	`
-	// return `<pre class="${cls}">${s.replace(/^\s+/,"")}</pre><hr>` 
-	}).join('');
-	html = `<table>${html}</table>`
+	var cls =  'no-memorize'
+	var verse = `All 104 verses - each once`;
+	var mp3 = `/chittoor/assets/chittoor-2-%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E/raghuvamsha/slokas_mp3/rv12_all.mp3`;
+	var all_html= `
+		<tr class="t${cls}"> 
+		<td> 
+			<span><a href="${mp3}"> <span><pre class="${cls}">${verse}</pre></span> </a></span>
+			<span><audio controls="" ${false?"loop":""} src=${mp3}> Your browser does not support the <code>audio</code> element. <a href=${mp3}> ${verse} </a> </audio></span>
+		</td>
+		</tr>
+	`
+	
+	sloka_table= `<table>${sloka_html}</table>` 
+	mem_all_table = `<table>${mem_html}${all_html}</table>`
+	// html = `<table>${sloka_html}</table>`
 	// console.log(html)
-	document.getElementById('#js-slokas').innerHTML = html;
+	document.getElementById('#js-slokas').innerHTML = `${sloka_table}<hr>${mem_all_table}`;
+	
 }
 
 function setupSlokas() { 
