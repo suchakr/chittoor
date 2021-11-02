@@ -25,7 +25,7 @@ function setupSlokas() {
 setTimeout( setupSlokas, 300)
 </script>
 
-[Download Pustakam!](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
+[Download Pustakam](/chittoor/assets/chittoor-2-अभिज्ञ/raghuvamsha/1343673-Raghuvamsha_-_12th_Sargah.pdf)
 
 ### Audio - Memorize the pinks
 
