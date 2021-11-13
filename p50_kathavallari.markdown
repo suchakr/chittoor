@@ -19,6 +19,9 @@ permalink: /kathavallari/
 ___
 
 ## सत्यमेव विजयते
+<div class="video-container">
+<iframe width="280" height="156" src="https://www.youtube.com/embed/O53Q5seRR7A" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 कस्मिंश्चिद् ग्रामे चौर्यमेव जीवनोपाधिं कृत्वा कश्चित् युवकः कालक्षेपाय दिवा द्यूतं क्रीडति स्म । एकदा कश्चित् महापुरुषः बहून प्रापञ्चिकान् आध्यात्मिकान् च विषयान् बोधयति स्म । 'मोक्षप्राप्तिरेव मानवजन्मनो लक्ष्यम् । तदर्थं सद्गुणाः, सत्प्रवर्तनं च आवश्यकमित्येवं सर्वसुबोधकं सुरुचिरम् आध्यात्मिकबोधनं करोति स्म ।
 

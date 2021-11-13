@@ -307,3 +307,9 @@ span {
   float: left;
   vertical-align: middle;
 }
+
+.video-container {
+  float: right;
+  border: 1px solid $grey-color-light;
+  overflow: hidden;
+}
