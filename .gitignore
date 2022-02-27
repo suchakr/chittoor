@@ -1,4 +1,4 @@
-**/*DS_Store
+**/.*DS_Store
 _site
 .sass-cache
 .jekyll-cache
@@ -8,3 +8,4 @@ assets/chittoor-2-अभिज्ञ/.DS_Store
 utils/~x.wav
 **/*~
 **/*.wav
+assets/chittoor-2-अभिज्ञ/.DS_Store
