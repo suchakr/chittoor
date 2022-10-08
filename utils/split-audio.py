@@ -38,9 +38,10 @@ import time
 import random
 warnings.filterwarnings('ignore')
 t0 = time.time()
-fns = glob.glob("../assets/*2*/rag*/*wav")
+# fns = glob.glob("../assets/*2*/rag*/*wav")
+fns = glob.glob("../assets/*2*/rag*/*Sarga1-*mp3")
 fn = fns[random.randint(0, len(fns)-1)]
-print(fn)
+print(fn, fns)
 x, sr = librosa.load(fn)
 print(f"Time to load {time.time() - t0}, {sr=}  {x.shape=}")
 
@@ -56,7 +57,7 @@ b=a+f
 orig = x[a:b]
 orig = pd.Series(orig)
 abs_orig = pd.Series(np.abs(x[a:b]))
-valleys = abs_orig.apply(lambda x: 0 if x < 0.08 else 1)
+valleys = abs_orig.apply(lambda x: 0 if x < 0.05 else 1)
 
 num_samples = 2*sr//3
 silences=[0]
@@ -107,7 +108,7 @@ iterrows = slokas.iterrows()
 rags = list(orig)
 for i, row in iterrows:
 	wav = rags[int(row.lo):int(row.hi)]
-	wav_fn = f"arag_10_{i:02d}.wav"
+	wav_fn = f"xarag_10_{i:02d}.wav"
 	print(wav_fn)
 	sf.write(wav_fn, wav, sr)
 # music.shape , sr2
